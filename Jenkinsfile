@@ -33,7 +33,7 @@ go test . -v
         sh '''#!/usr/bin/env bash
 set -euxo pipefail
 
-docker build -t 8-03-hw:${BUILD_NUMBER} .
+docker build -t 8-04-hw:${BUILD_NUMBER} .
 '''
       }
     }
@@ -41,10 +41,8 @@ docker build -t 8-03-hw:${BUILD_NUMBER} .
 
   post {
     success {
-      // если захочешь — можешь собирать бинарь и архивировать его
-      // sh 'go build -v -o app .'
-      // archiveArtifacts artifacts: 'app', allowEmptyArchive: true
       echo 'Build OK'
     }
   }
 }
+
